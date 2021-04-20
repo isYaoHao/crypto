@@ -7,7 +7,7 @@
     "dotenv": "^8.2.0"
   },
   "scripts": {
-    "d": "node decrypt.js",
-    "e": "node encryption.js"
+    "decrypt": "node decrypt.js",
+    "encryption": "node encryption.js"
   }
 }

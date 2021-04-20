@@ -12,7 +12,20 @@
 git clone https://github.com/isYaoHao/crypto.git
 ```
 
-在根目录下创建以下三个文件：
+安装依赖
+
+```bash
+yarn install
+```
+
+或
+
+```bash
+npm install
+```
+
+在根目录下创建三个文件：
+
 .env
 decrypt.txt
 encryption.txt
@@ -36,13 +49,13 @@ SALT 为盐值，自定义值，请私人保存；
 运行:
 
 ```bash
-yarn d
+yarn decrypt
 ```
 
 或者
 
 ```bash
-npm run d
+npm run decrypt
 ```
 
 #### 解密操作
@@ -52,13 +65,13 @@ npm run d
 运行:
 
 ```bash
-yarn e
+yarn encryption
 ```
 
 或者
 
 ```bash
-npm run e
+npm run encryption
 ```
 
 #### 通用
