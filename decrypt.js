@@ -3,7 +3,10 @@ const Cpt = require("./cpt.js");
 const fs = require("fs");
 const { writeSync } = require("clipboardy");
 dotenv.config();
-const cpt = new Cpt(process.env.secretKey);
+const cpt = new Cpt({
+  secretKey: process.env.secretKey,
+  salt: process.env.salt,
+});
 
 (() => {
   const str = fs.readFileSync("decrypt.txt", "utf-8");

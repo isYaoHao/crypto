@@ -2,14 +2,15 @@ const crypto = require("crypto");
 const { Buffer } = require("buffer");
 
 class cpt {
-  constructor(cpt) {
-    this.secretKey = cpt;
+  constructor(d) {
+    this.salt = d.salt;
+    this.secretKey = d.secretKey;
   }
 
   encryption(data) {
     //AES对称加密
     const algorithm = "aes-192-cbc";
-    const key = crypto.scryptSync(this.secretKey, "yaohao", 24);
+    const key = crypto.scryptSync(this.secretKey, this.salt, 24);
     const iv = Buffer.alloc(16, 0); // 初始化向量。
     const cipher = crypto.createCipheriv(algorithm, key, iv); //使用aes192加密
     let enc = cipher.update(data, "utf8", "hex"); //编码方式从utf-8转为hex;
@@ -20,7 +21,7 @@ class cpt {
   //解密
   decrypt(text) {
     const algorithm = "aes-192-cbc";
-    const key = crypto.scryptSync(this.secretKey, "yaohao", 24);
+    const key = crypto.scryptSync(this.secretKey, this.salt, 24);
     const iv = Buffer.alloc(16, 0); // 初始化向量。
     const decipher = crypto.createDecipheriv(algorithm, key, iv);
     let dec = decipher.update(text, "hex", "utf8");

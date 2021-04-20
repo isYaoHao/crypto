@@ -1,15 +1,13 @@
 {
   "name": "crypto",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "clipboardy": "^2.3.0",
-    "crypto-js": "^4.0.0",
     "dotenv": "^8.2.0"
   },
   "scripts": {
-    "d":"node decrypt.js",
-    "e":"node encryption.js"
+    "d": "node decrypt.js",
+    "e": "node encryption.js"
   }
 }
